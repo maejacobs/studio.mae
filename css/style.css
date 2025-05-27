@@ -1,0 +1,517 @@
+body {
+    margin: 0;  
+    width: 98vw;
+    min-height: 100vh;
+    background-image:url(../images/BG.jpeg) ;
+    background-size: cover;         
+    background-repeat: no-repeat;   
+    background-position: center;   
+    background-attachment: fixed; 
+}
+
+.header-desktop{
+    display: none;
+}
+
+header {
+    position: relative;
+    background-color: black;
+    height: 320px;
+    width: 100%;
+  }
+  
+  /* Witte inham rechtsonder */
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150px; /* vergroot de inham */
+    height: 146px;
+    background-color: white;
+    z-index: 1;
+  }
+  
+  /* Navigatie groter en in de inham */
+  .nav {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 135px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  /* Navigatiemenu stijlen */
+  .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-menu li {
+    margin: 10px 0;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 36px;
+    font-family: 'Freeman', sans-serif;
+    align-items: center;
+  }
+  
+  .studio-mae-mobile{
+    width: 90vw;
+    height: auto;
+    position: absolute; /* of fixed als je wil dat 'ie blijft staan bij scroll */
+    top: 20px;          /* vanaf bovenkant van header */
+   left: 35%;          /* horizontaal midden */
+    transform: translateX(-50%); /* echt horizontaal centreren */
+    width: 30rem;
+    height: auto;
+    margin: 0;
+    z-index: 10;        /* hoger dan header en nav */
+    pointer-events: none; /* voorkomt dat het klikbaar is (optioneel) */
+}
+
+.studio-mae-mobile img{
+  width: fit-content;
+}
+
+  .studiomae{
+    visibility: hidden;
+  }
+
+  .container img {
+   max-width: 100%;
+    height: auto;
+    margin-bottom: 10rem;
+    margin-top: 5rem;
+  }
+
+  .contact{
+    width: 90vw;
+    height: 50vh;
+    background-color: black;
+    margin-left: 3.5%;
+    border-radius: 5rem;
+    margin-bottom: 15rem;
+  }
+
+  .contact .phrase h2 {
+    font-family: "Freeman" , sans-serif;
+    font-size: 36px;
+    color: whitesmoke;
+    margin-left: 10rem;
+    margin-bottom: 2rem;
+    margin-top: 6rem;
+  }
+
+  .contact{
+    padding-top: 1rem;
+  }
+  
+  /* Zorg dat socials1 en socials2 werken als klikbare flex containers */
+.socials1,
+.socials2 {
+  display: flex;
+  align-items: center;     /* Verticaal centreren binnen de rij */
+  flex-direction: row;
+  gap: 2rem;               /* Ruimte tussen tekst en afbeelding */
+  margin-top: 1rem;
+  text-decoration: none;
+  margin-left: 10rem;
+  margin-bottom: 1rem;
+}
+
+/* Maak het hele blok klikbaar */
+.socials1 a,
+.socials2 a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 3rem;
+}
+
+/* Zorg dat iconen correct worden weergegeven */
+.socials1 img,
+.socials2 img {
+  width: 70px;
+  height: auto;
+  display: block;
+}
+
+/* Stijl voor de tekst */
+.INSTAGRAM,
+.LINKED-IN {
+  font-size: 3rem;
+  font-family: 'Freeman', sans-serif;
+  color: rgb(255, 254, 254);
+  margin: 0;
+}
+
+  
+  .email-contact{
+    font-family: "Freeman" , sans-serif;
+    font-size: 20px;
+    color: whitesmoke;
+    padding: 2rem;
+    margin-left: 8rem;
+    margin-bottom: 2rem;
+    margin-top: -2rem;
+  }
+  .footer {
+  width: 100vw;
+  margin-top: auto;
+  }
+
+ .footer img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .footer-desktop{
+    visibility: hidden;
+    display: none;
+  }
+
+  .about-page .young img{
+    max-width: 100%;
+    margin: 0 auto;
+    margin-left: 5rem;
+  }
+
+ img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+ }
+
+  .intro img{
+  width: 60vw;
+  height: auto;
+  margin-left: 5vw;
+  margin-bottom: 5vh;
+  margin-top: -7rem;
+ }
+
+ .pijl-links img{
+  width: 15vw;
+  height: auto;
+  margin-left: 35rem;
+  margin-top: -5rem;
+ }
+
+ .older img {
+    max-width: 100%;
+    margin: 0 auto;
+    height: auto;
+    margin-left: -2rem;
+    margin-top: -5rem;
+ }
+
+ @keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.young img {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.older img {
+  opacity: 0;
+  animation: fade-in 1.2s ease-out forwards;
+  animation-timeline: view(); /* vereist moderne browser zoals Chrome */
+  animation-range: entry 50% cover 50%;
+}
+
+ .tekst1 img{
+    width: 70vw;
+    margin-left: 3rem ;
+    margin-bottom: 7rem;
+ }
+
+ .tekst2 img{
+  width: 60vw;
+    margin-left: 15rem;
+ }
+
+ .pijl-rechts img{
+  width: 15vw;
+    margin-left: 3rem;
+ }
+
+ .dataset img{
+    width: 90vw;
+    margin-left: 5rem;
+ }
+
+ .work-page header{
+    margin-bottom: 200%;
+ }
+
+ .work-page header .Header-desktop{
+  visibility: hidden;
+ }
+
+ .about-page header .Header-desktop{
+  visibility: hidden;
+ }
+
+ .about-page footer{
+  margin: 0;
+ }
+
+ .work-page .footer img{
+  margin-top: 60vh;
+ }
+
+ .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* optioneel: donkere achtergrond */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Wanneer checkbox is aangevinkt: popup tonen */
+#popup-toggle:checked + .popup-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup-overlay img {
+  width: 700px;
+  height: auto;
+  transition: transform 0.4s ease;
+  transform: scale(1);
+}
+
+/* Wanneer popup actief is (niet weg geklikt) */
+#popup-toggle:not(:checked) + .popup-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+ 
+
+
+@media screen and (min-width: 1440px) {
+
+  .studio-mae-mobile {
+    visibility: hidden;
+  }
+
+  .studiomae {
+  visibility: visible;
+  position: fixed;              /* blijft op z’n plaats bij scrollen */
+  top: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  padding: 2rem;
+  background-color: black;
+  z-index: 9999;                /* altijd zichtbaar bovenop alles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.studiomae img {
+  max-width: 50%;
+  height: auto;
+  display: block;
+}
+
+
+  header {
+    background-color: transparent;
+  }
+
+  header::after {
+    background-color: transparent;
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 3rem;
+    margin-bottom: 0;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 17rem;
+    margin: 0;
+    padding: 0;
+    margin-left: -20rem;
+  }
+
+  .nav-menu li a {
+    font-size: 48px;
+    color: black;
+  }
+
+  .container img {
+    width: 85vw;
+    padding-top: -5rem;
+    margin-top: -25rem; /* voeg deze regel toe */
+  }
+
+  .contact{
+    width: 50vw;
+    height: 75vh;
+    margin-left: 28rem;
+  }
+
+  .email-contact p {
+    margin-top: -5rem;
+    margin-bottom: 5rem;
+    margin-left: -7rem;
+    font-size: 48px;
+    color: whitesmoke;
+    font-family: "Freeman", sans-serif;
+    margin-top: -5rem;
+  }
+
+  .contact {
+    padding-top: 5rem;
+    margin-top: 0;
+    width: 40vw;
+    height: 70vh;
+    margin-left: 35rem;
+  }
+
+  .contact .phrase h2{
+    font-size: 60px;
+    margin-bottom: 2rem;
+    margin-left: 10rem;
+  }
+
+  .socials1 , .socials2 , .email-contact{
+    margin-left: 17rem;
+  }
+
+  .socials1 {
+    margin-top: 7rem;
+  }
+
+  .socials1 p, .socials2 p{
+    font-size: 48px;
+  }
+
+  .footer img {
+    visibility: hidden;
+  }
+
+  .footer-desktop {
+  display: block;
+  visibility: visible;
+  background-color: black;
+}
+
+.footer-desktop img {
+  width: 100%;
+  height: auto;
+  display: block;
+  visibility: visible;
+}
+
+  .about-page .nav-menu {
+    margin-top: -191rem;
+  }
+
+  .about-page .young img{
+    width: 50vw;
+    margin-top: -25rem;
+    margin-left: 50rem;
+  }
+
+  .about-page .intro img{
+    width: 30vw;
+    margin-top: -20rem;
+    margin-left: 10rem;
+  }
+
+  .pijl-links img{
+    width: 10vw;
+    margin-left: 98rem;
+    margin-top: -10rem;
+  }
+
+  .older img {
+    width: 50vw;
+    margin-top: -35rem;
+    margin-left: 15rem;
+  }
+
+  .tekst1 img {
+    width: 40vw;
+    margin-left: 10rem;
+  }
+
+  .tekst2 img{
+    width: 30vw;
+    margin-left: 75rem;
+    margin-top: 20rem;
+  }
+
+  .pijl-rechts img{
+    width: 10vw;
+    margin-top: -5rem;
+    margin-left: 15rem;
+  }
+
+  .dataset img{
+    width: 80vw;
+    margin-left: 15rem;
+    margin-bottom: -40rem;
+  }
+
+  .work-page .nav-menu{
+    margin-top: -191rem;
+  }
+
+}
